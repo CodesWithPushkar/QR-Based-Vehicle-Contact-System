@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes My Wheelz - Manage Parking with QR</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Yes My Wheelz</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#register">Register Vehicle</a></li>
+                <li><a href="#scan">Scan QR</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Yes My Wheelz</h1>
+        <p>Manage your parking with ease. Generate a QR code to register your vehicle and avoid parking issues.</p>
+        <a href="#register" class="cta-button">Register Vehicle</a>
+    </section>
+
+    <section id="register" class="register">
+        <div class="container">
+            <h2>Register Your Vehicle</h2>
+            <form id="registerForm">
+                <label for="ownerName">Owner Name</label>
+                <input type="text" id="ownerName" placeholder="e.g., John Doe" required>
+                
+                <label for="vehicleNumber">Vehicle Number</label>
+                <input type="text" id="vehicleNumber" placeholder="e.g., UP16 AB 1234" required>
+
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" placeholder="e.g., 9876543210" required>
+
+                <button type="submit">Generate QR Code</button>
+            </form>
+            <div id="qrCodeContainer" class="hidden">
+                <h3>Your QR Code (Save or Screenshot this)</h3>
+                <div id="qrCode"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scan" class="scan">
+        <div class="container">
+            <h2>Scan a Vehicle's QR Code</h2>
+            <p>Scan the QR code pasted on any vehicle to see its details.</p>
+            <input type="file" id="qrInput" accept="image/*" />
+            <div id="scanResult" class="result hidden"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Yes My Wheelz. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/qr-scanner@1.4.2/qr-scanner.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
